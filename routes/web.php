@@ -46,6 +46,75 @@ Route::get('/model', function () {
     //     'name' => 'João Vitor Oliveira Araujo'
     // ]);
     // dd($user);
+
+    //$user = \App\User::find(4);
+    
+    //dd($user->store()->count()); //Retorna o objeto unico(store) 
+
+    //Como pegar os produtos de uma loja ?
+    //$loja = \App\Store::find(1);
+    //return $loja->products;  |  $loja->products()->where('id', 9)->get()
+
+
+    // Como pegar as categorias de uma loja ?
+    //$categoria = \App\Category::all();
+    //$categoria->products;
+
+
+
+
+
+    //Criar uma loja para um usuário
+    // $user = \App\User::find(10);
+    // $store = $user->store()->create([
+    //     'name'=> 'Loja teste',
+    //     'description'=> 'Loja teste de produtos de informática',
+    //     'phone'=> 'XX-XXXX-XXXX',
+    //     'mobile_phone'=> 'XX-XXXX-XXXX',
+    //     'slug'=>'loja-teste'
+    // ]);
+
+    // dd($store);
+
+
+    //Criar um produto para uma loja
+    // $store = \App\Store::find(41);
+    // $product = $store->products()->create([
+    //     'name' => 'notebook',
+    //     'description' => 'é isso',
+    //     'body' => 'uhul ae',
+    //     'price' => 10.8,
+    //     'slug' => 'tchurabirao'
+    // ]);
+
+    // dd($product);
+
+    //Criar uma categoria
+
+    // \App\Category::create([
+    //     'name' => 'Games',
+    //     'description' => null,
+    //     'slug' => 'games'
+    // ]);
+
+    // \App\Category::create([
+    //     'name' => 'Notebooks',
+    //     'description' => 'teste um dois',
+    //     'slug' => 'notebooks'
+    // ]);
+
+
+    // return \App\Category::all();
+
+    //Adicionar um produto para uma categoria
+    $product = \App\Product::find(35);
+
+    // dd($product->categories()->attach([1])); //detach para remover
+    dd($product->categories()->sync([1,2]));
+
+
+
+
     return \App\User::all();
 });
  

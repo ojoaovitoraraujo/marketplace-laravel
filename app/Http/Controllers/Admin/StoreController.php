@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class StoreController extends Controller
 {
+
     public function index(){
         $stores = \App\Store::paginate(10);
 
@@ -46,7 +47,7 @@ class StoreController extends Controller
 
     public function destroy($store){
         $store = \App\Store::find($store);
-        $store->delete();
+		$store->delete();
 
         flash('Loja Removida com Sucesso')->error();
         return redirect()->route('admin.stores.index');

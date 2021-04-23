@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <a href="{{route('admin.products.create')}}" class="btn btn-lg btn-success my-5">Criar Produto</a>
+    <a href="{{route('admin.products.create')}}" class="btn btn-lg btn-success mb-5">Criar Produto</a>
 
     <table class="table table-striped ">
         <thead>
